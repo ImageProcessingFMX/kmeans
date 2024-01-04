@@ -29,7 +29,6 @@ type
 
   /// <summary>
   /// This procedure clusters a bitmap image into K clusters using the K-means algorithm.
-  /// https://rosettacode.org/wiki/K-means%2B%2B_clustering#Delphi
   /// The input bitmap image
   /// The output bitmap image
   /// The number of clusters
