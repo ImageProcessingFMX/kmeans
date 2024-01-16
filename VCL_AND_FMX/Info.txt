@@ -1,1 +1,10 @@
+You need to define  your *.dproj file on your own.  As both frameworks are supported via a compiler switch 
 
+{$IFDEF FrameWork_VCL}
+    DrawingColor: TColor;
+{$ENDIF}
+{$IFDEF FrameWork_FMX}
+    DrawingColor: TAlphaColor;
+{$ENDIF}
+
+add FrameWork_VCL  for the VCL application or FrameWork_FMX for the FMX application 
