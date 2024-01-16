@@ -1,0 +1,137 @@
+object KemansDemoForm: TKemansDemoForm
+  Left = 0
+  Top = 0
+  Caption = 'KMeans Image Processing  '
+  ClientHeight = 482
+  ClientWidth = 1005
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Left
+    Size.Width = 209.000000000000000000
+    Size.Height = 450.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object CornerButton_FullTest: TCornerButton
+      Position.X = 16.000000000000000000
+      Position.Y = 72.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 185.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'CornerButton_FullTest'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton_FullTestClick
+    end
+    object CornerButton_list_class: TCornerButton
+      Position.X = 16.000000000000000000
+      Position.Y = 152.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 185.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'CornerButton_List<Class>'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton_list_classClick
+    end
+    object CornerButton_list_rec: TCornerButton
+      Position.X = 16.000000000000000000
+      Position.Y = 200.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 185.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'CornerButton_List_<Rec>'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton_list_recClick
+    end
+    object CornerButton_LoadBMP: TCornerButton
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 185.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'CornerButton_LoadBMP'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton_LoadBMPClick
+    end
+    object DebugMemo: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Bottom
+      Position.Y = 281.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 169.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Viewport.Width = 205.000000000000000000
+      Viewport.Height = 165.000000000000000000
+    end
+    object CheckBox_strechImages: TCheckBox
+      Position.X = 16.000000000000000000
+      Position.Y = 256.000000000000000000
+      TabOrder = 7
+      Text = 'CheckBox_strechImages'
+    end
+  end
+  object Panel2: TPanel
+    Align = Bottom
+    Position.Y = 450.000000000000000000
+    Size.Width = 1005.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object StatusbarLabel: TLabel
+      Align = Client
+      Size.Width = 1005.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'StatusbarLabel'
+      TabOrder = 0
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Left = 40
+    Top = 328
+  end
+  object ImagePanel: TPanel
+    Align = Client
+    Size.Width = 796.000000000000000000
+    Size.Height = 450.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    OnResize = ImagePanelResize
+    object SourceImage: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 24.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 337.000000000000000000
+      Size.Height = 337.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object OutImage: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 392.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 353.000000000000000000
+      Size.Height = 337.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+end
