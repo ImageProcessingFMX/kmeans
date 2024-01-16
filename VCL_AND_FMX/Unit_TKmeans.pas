@@ -310,6 +310,30 @@ begin
 
 end;
 
+
+function TImageClusterKMeans.ClusterCentroidsToString: String;
+var
+  i: Integer;
+  OneCluster: TCluster<TClusterDataREC>;
+begin
+  result := '';
+  for i := 0 to FClusteredData.Count - 1 do
+  begin
+    OneCluster := FClusteredData[i];
+{$IFDEF FrameWork_VCL}
+    result := result + ColorToString(OneCluster.Center.DrawingColor) + '|' +
+      IntTostr(length(OneCluster.ClusterElements)) + '; ';
+{$ENDIF}
+{$IFDEF FrameWork_FMX}
+    result := result + AlphaColorToString(OneCluster.Center.DrawingColor) + '|'
+      + IntTostr(length(OneCluster.ClusterElements)) + '; ';
+{$ENDIF}
+  end;
+end;
+
+
+
+
 {$IFDEF FrameWork_VCL}
 
 procedure TImageClusterKMeans.SaveData(OutBitMap: TBitmap);
@@ -352,25 +376,7 @@ begin
 
 end;
 
-function TImageClusterKMeans.ClusterCentroidsToString: String;
-var
-  i: Integer;
-  OneCluster: TCluster<TClusterDataREC>;
-begin
-  result := '';
-  for i := 0 to FClusteredData.Count - 1 do
-  begin
-    OneCluster := FClusteredData[i];
-{$IFDEF FrameWork_VCL}
-    result := result + ColorToString(OneCluster.Center.DrawingColor) + '|' +
-      IntTostr(length(OneCluster.ClusterElements)) + '; ';
-{$ENDIF}
-{$IFDEF FrameWork_FMX}
-    result := result + AlphaColorToString(OneCluster.Center.DrawingColor) + '|'
-      + IntTostr(length(OneCluster.ClusterElements)) + '; ';
-{$ENDIF}
-  end;
-end;
+
 
 procedure TImageClusterKMeans.LoadData(SoureBitMap: TBitmap);
 var
